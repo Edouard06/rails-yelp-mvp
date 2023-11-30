@@ -1,0 +1,20 @@
+<%= form_with(model: @restaurant, local: true) do |form| %>
+  <%= form.label :name %>
+  <%= form.text_field :name %>
+
+  <%= form.label :address %>
+  <%= form.text_area :address %>
+
+  <%= form.label :phone_number %>
+  <%= form.text_field :phone_number %>
+
+  <%= form.label :category %>
+  <%= form.select :category, ["chinese", "italian", "japanese", "french", "belgian"] %>
+
+  <% unless @hide_completed %>
+    <%= form.label :completed %>
+    <%= form.check_box :completed %>
+  <% end %>
+
+  <%= form.submit %>
+<% end %>
